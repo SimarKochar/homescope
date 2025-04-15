@@ -1,38 +1,32 @@
+/* src/App.css */
+
+/* --- Global App Layout --- */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* Ensure footer stays at bottom */
+  background-color: var(--background-primary); /* Use variable */
 }
 
-.App-link {
-  color: #61dafb;
+.main-content {
+  flex: 1; /* Allows this section to grow and push footer down */
+  /* Padding can be handled by page containers if needed */
+  /* padding: 20px; */
+  max-width: 1300px; /* Consistent max width */
+  margin: 0 auto; /* Center content area */
+  width: 100%;
+  padding-left: 15px; /* Add horizontal padding for smaller screens */
+  padding-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensure text color is inherited correctly */
+h1, h2, h3, h4, h5, h6, p, li, span, div {
+  color: inherit; /* Inherit from body or parent */
 }
+
+/* You might not need button styles here if defined in index.css */
+/*
+.btn { ... }
+.btn-primary { ... }
+.btn-secondary { ... }
+*/

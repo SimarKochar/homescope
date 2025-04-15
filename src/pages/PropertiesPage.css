@@ -1,0 +1,107 @@
+/* src/pages/PropertiesPage.css */
+
+.properties-page-container {
+    padding-top: 20px; /* Add space below Navbar */
+}
+
+/* Shared Page Title Style */
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Shared Page Subtitle Style (for search results) */
+.page-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+.page-subtitle em { /* Style for the search term itself */
+    color: var(--text-accent);
+    font-style: normal; /* Override default italic if needed */
+}
+
+.properties-controls {
+  display: flex;
+  justify-content: center; /* Center controls horizontally */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px 25px; /* Vertical and horizontal gap */
+  padding: 15px 20px; /* Padding around controls */
+  margin-bottom: 30px; /* Space below controls */
+  background-color: var(--background-accent); /* Use variable */
+  border-radius: 8px;
+  border: 1px solid var(--border-primary); /* Use variable */
+  align-items: center; /* Align items vertically */
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between label and select */
+}
+
+.control-group label {
+  font-weight: bold;
+  color: var(--text-secondary); /* Use variable */
+  font-size: 0.9rem;
+  white-space: nowrap; /* Prevent label wrapping */
+}
+
+.control-group select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-secondary); /* Use variable */
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: var(--background-secondary); /* Use variable */
+  color: var(--text-primary); /* Use variable */
+  min-width: 150px; /* Give dropdowns some minimum width */
+}
+.control-group select:focus {
+   border-color: var(--text-accent); /* Use variable */
+   outline: none;
+}
+
+.compare-button-group {
+    margin-left: auto; /* Push compare button to the right */
+    /* This works if parent is flex and items before don't take all space */
+    /* Alternatively, use justify-content: space-between on .properties-controls */
+    /* and wrap filter/sort controls in their own div */
+}
+
+.compare-button-group .btn { /* Target the button within the group */
+    padding: 8px 15px; /* Slightly smaller padding */
+    font-size: 0.9rem;
+}
+
+.compare-button-group .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: var(--button-secondary-bg); /* Ensure disabled style is visible */
+    color: var(--text-secondary);
+    border-color: var(--border-secondary);
+}
+
+/* Responsive adjustments for controls */
+@media (max-width: 768px) {
+    .properties-controls {
+        justify-content: space-around; /* Better spacing on smaller screens */
+        gap: 15px; /* Consistent gap */
+    }
+    .compare-button-group {
+        margin-left: 0; /* Don't push right */
+        width: 100%; /* Make compare button full width */
+        display: flex; /* Allow centering button inside */
+        justify-content: center;
+        margin-top: 10px; /* Add space above */
+    }
+    .compare-button-group .btn {
+        width: auto; /* Reset width */
+        min-width: 150px; /* Give it some width */
+    }
+}

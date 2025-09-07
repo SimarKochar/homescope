@@ -1,86 +1,104 @@
-# HomeScope (React Frontend)
+# HomeScope
 
-This is a frontend  of a real estate listing website, built with React.js. It demonstrates features like property browsing, filtering, details view, dark mode, and more.
+HomeScope is a modern real estate listing web application focused on housing predictability and property listings near VIT Bhopal. The frontend is built with React.js and demonstrates advanced features for property browsing, filtering, comparison, and more—all with a user-friendly, responsive interface.
 
-![ HomeScope Homepage](image.png)
-
+![HomeScope Homepage](image.png)
 
 ## Features
 
-*   Browse featured and all properties
-*   View property details (address, price, beds, baths, sqft, description)
-*   Filter properties by minimum bedrooms
-*   Sort properties by price or bedrooms
-*   Search properties by address/description keywords (from Hero section)
-*   Save favorite properties (using Browser Local Storage)
-*   View saved properties on a dedicated Favorites page
-*   Property Comparison Tool (compare up to 3 properties side-by-side)
-*   Dark Mode / Light Mode toggle
-*   Mortgage Calculator (INR currency)
-*   Basic Chatbot Interface
-*   Responsive design
-*   Routing using React Router DOM
-*   Modals for Login/Sign Up (placeholder forms)
-*   Embedded Google Map on Contact page
+- **Browse Properties:** View featured and all available properties.
+- **Property Details:** See address, price (in INR), beds, baths, sqft, and description for each listing.
+- **Filtering & Sorting:** Filter by minimum bedrooms, sort by price or bedrooms, and search by address/description keywords.
+- **Favorites:** Save favorite properties using browser local storage and view them on a dedicated page.
+- **Property Comparison:** Compare up to 3 properties side-by-side.
+- **Dark/Light Mode:** Toggle between dark and light themes.
+- **Mortgage Calculator:** Calculate estimated monthly payments (EMI) in INR.
+- **Rent Estimation (ML Model):** Estimate property rent using a Python machine learning form (see below).
+- **Chatbot Interface:** Basic chatbot functionality for user queries.
+- **Responsive Design:** Works across devices with modern UI.
+- **Routing:** Seamless navigation via React Router DOM.
+- **Modals:** Login/Sign Up forms shown in modals (placeholders).
+- **Google Maps:** Embedded map on the contact page.
+
+## Machine Learning Rent Estimator
+
+HomeScope integrates a Python-based machine learning form to estimate the rent of properties in the region.  
+- **Local Dataset:** The training data for the rent estimation model was **manually collected** from properties in Kothri, Ashata, and Sehore areas.
+- **Usage:** Users can input property features into the form, and the model provides an estimated rent based on local trends.
+- **Integration:** The ML form runs locally; for usage instructions, see below.
+
+### Running the Rent Estimator (Locally)
+
+1. **Navigate to the ML directory:**
+    ```bash
+    cd ml_rent_estimator
+    ```
+2. **Install Python dependencies:**  
+    (Recommended: Use a virtual environment)
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. **Start the ML form (example using Flask):**
+    ```bash
+    python app.py
+    ```
+4. **Interact with the form:**  
+    Open [http://localhost:5000](http://localhost:5000) in your browser.
+
+> **Note:** The ML model uses local features (beds, baths, sqft, location, etc.) and is designed for the Kothri, Ashata, Sehore region. The dataset was manually gathered and curated for accurate results.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Follow these steps to run HomeScope locally:
 
 ### Prerequisites
 
-*   [Node.js](https://nodejs.org/) (which includes npm) installed on your system.
-*   [Git](https://git-scm.com/) installed on your system.
+- [Node.js](https://nodejs.org/) (includes npm)
+- [Git](https://git-scm.com/)
+- [Python 3.x](https://python.org/) (for rent estimator)
 
 ### Installation & Running
 
-1.  **Clone the repository:**
+1. **Clone the repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/homescope-clone.git
+    git clone https://github.com/SimarKochar/homescope.git
     ```
-    *(Replace with your repo URL)*
-2.  **Navigate to the project directory:**
+2. **Navigate to the project directory:**
     ```bash
-    cd homescope-clone
+    cd homescope
     ```
-3.  **Install dependencies:**
+3. **Install dependencies:**
     ```bash
     npm install
     ```
-    *(Or `yarn install` if you prefer yarn)*
-4.  **Start the development server:**
+4. **Start the development server:**
     ```bash
     npm start
     ```
-    *(Or `yarn start`)*
 
-The application should now open automatically in your default web browser at `http://localhost:3000`.
+The application will open at `http://localhost:3000` in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-*   `npm start`: Runs the app in development mode.
-*   `npm test`: Launches the test runner.
-*   `npm run build`: Builds the app for production to the `build` folder.
-*   `npm run eject`: Removes the single build dependency (usually not needed).
+- `npm start` — Runs the app in development mode.
+- `npm test` — Launches the test runner.
+- `npm run build` — Builds the app for production.
+- `npm run eject` — Removes the single build dependency (rarely needed).
 
 ## Built With
 
-*   [React](https://reactjs.org/) - The web framework used
-*   [React Router DOM](https://reactrouter.com/) - For routing
-*   [React Icons](https://react-icons.github.io/react-icons/) - For icons
-*   CSS (with CSS Variables for theming)
-*   Create React App - Project setup
-
+- [React](https://reactjs.org/)
+- [React Router DOM](https://reactrouter.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- CSS (with CSS Variables for theming)
+- Create React App
+- **Python (Flask, scikit-learn, pandas) for ML rent estimator**
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details (if you add one).
-
+This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
 ## Contact
 
-Your Name - anshkhanna2042@gmail.com
-
-Project Link: [https://github.com/Anshkhanna0808/homescope.git]
+Maintainer: SimarKochar  
+Project Link: [https://github.com/SimarKochar/homescope](https://github.com/SimarKochar/homescope)
